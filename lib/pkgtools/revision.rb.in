@@ -1,4 +1,0 @@
-module PkgTools
-  REVISION = '%%REVISION%%'
-  DATE = '%%DATE%%'
-end
