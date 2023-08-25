@@ -23,5 +23,4 @@ class PkgDBTools:
         return self.db_driver
 
     def set_db_driver(self, new_db_driver):
-        # Translate the functionality of the db_driver= function from Ruby to Python.
-        pass
+        self.db_driver = new_db_driver
