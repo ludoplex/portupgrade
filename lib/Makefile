@@ -1,17 +1,17 @@
 
 BUILDDIR=	.build
 
-PKGTOOLS_SRC=	pkg.rb \
-		pkgdb.rb \
-		pkgdbtools.rb \
-		pkginfo.rb \
-		pkgmisc.rb \
-		pkgtools.rb \
-		pkgtsort.rb \
-		pkgversion.rb \
-		portinfo.rb \
-		ports.rb \
-		portsdb.rb
+PKGTOOLS_SRC=	pkg.py \
+		pkgdb.py \
+		pkgdbtools.py \
+		pkginfo.py \
+		pkgmisc.py \
+		pkgtools.py \
+		pkgtsort.py \
+		pkgversion.py \
+		portinfo.py \
+		ports.py \
+		portsdb.py
 
 FILESGROUPS=	FILES PKGTOOLSFILES
 FILES=		pkgtools.rb
@@ -26,10 +26,10 @@ CLEANDIRS=	${BUILDDIR}
 
 .for file in ${PKGTOOLS_SRC}
 ${BUILDDIR}/${file}: pkgtools/${file}
-	${RUBY} -wc ${.ALLSRC}
+	${PYTHON} -m py_compile ${.ALLSRC}
 	@${MKDIR} ${BUILDDIR}/
-	${RUBY} -p \
-		-e '$$_.sub %r:/usr/local:, "${PREFIX}"' \
+	${PYTHON} -c \
+		"import fileinput, sys; [sys.stdout.write(line.replace('/usr/local', '${PREFIX}')) for line in fileinput.input()]"
 		${.ALLSRC} > ${.TARGET}
 .endfor
 
