@@ -6,11 +6,8 @@ Installation.
 
 You need to install the following ports to use these pkgtools:
 
- * `lang/ruby18` -- Ruby 1.8 interpreter, or
- * `lang/ruby19` -- Ruby 1.9 interpreter.
+ * Python 3.11.5 interpreter.
 
-If you want to be able to run tests, you will also need to install
-devel/ruby-testunit.
 
 Tools included.
 ---------------
