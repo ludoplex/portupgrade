@@ -4,20 +4,24 @@
 import os
 import sys
 
-# Function to install a package
-def install_package(package_name):
-    # Code to install the package
-    pass
+class Pkg:
+    def __init__(self, package_name):
+        self.package_name = package_name
 
-# Function to uninstall a package
-def uninstall_package(package_name):
-    # Code to uninstall the package
-    pass
+    # Method to install a package
+    def install(self):
+        # Code to install the package
+        pass
 
-# Function to update a package
-def update_package(package_name):
-    # Code to update the package
-    pass
+    # Method to uninstall a package
+    def uninstall(self):
+        # Code to uninstall the package
+        pass
+
+    # Method to update a package
+    def update(self):
+        # Code to update the package
+        pass
 
 # Main function
 def main():
